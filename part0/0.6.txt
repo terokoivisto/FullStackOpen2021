@@ -1,0 +1,6 @@
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa {content: "xxx", date: ...}
+server->browser: HTTPResponse: {"message":"note created"}
+
+note left of browser: When the Save-button is pressed, the note is added to the list of displayed notes and then the POST request is sent to the server
+note right of server: Server adds the note to the list of notes

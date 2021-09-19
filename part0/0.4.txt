@@ -1,0 +1,17 @@
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server->browser: HTTP 302 Found
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server->browser: notes HTML
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: data.json
+browser->server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+server->browser: favicon.ico
+
+note over browser: Browser gets the HTML, which has links to css and js, so it loads them. After JS is loaded it starts executing the code and requetss data.json and modifys the rendered HTML to display all the notes
+note over server: Server returns requested resources to the browser
+
